@@ -130,7 +130,7 @@ firewall_stats = {
 def telemetry_decoder(sampledata):
     tel_info = telemetry_top_pb2.TelemetryStream()
     tel_info.ParseFromString(sampledata)
-    print ('sensorname: ', tel_info.sensor_name, 'process id:', os.getpid())
+#    print ('sensorname: ', tel_info.sensor_name, 'process id:', os.getpid())
     sensorname = tel_info.sensor_name.split(':')[0]  # split pfe:/junos/system/linecard/packet/usage/:/junos/system/linecard/packet/usage/:PFE
     systemid = re.sub('-re.$', '', tel_info.system_id.split(':')[0] )  # cut -reX:A.B.C.D from mx-aaa-re0
     componentid = tel_info.component_id

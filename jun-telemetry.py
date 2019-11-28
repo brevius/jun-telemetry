@@ -31,7 +31,6 @@ import datetime
 from multiprocessing import Process, Queue, cpu_count, Pool
 from influxdb import InfluxDBClient
 from copy import deepcopy
-from pprint import pprint
 
 def getOptions(args=sys.argv[1:]):
 
