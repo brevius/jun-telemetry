@@ -1,7 +1,7 @@
 # jun-telemetry
 NTI message decoder for Juniper routers
 
-Receives and sends to InfluxDB decoded counters from Juniper routers. Requires python3 and protobuf. Tested on FreeBSD12.0-RELEASE
+Receives GPB data from Juniper routers and sends decoded counters to InfluxDB. Requires python3 and protobuf. Tested with Junos 16.1/17.3 and FreeBSD12.0-RELEASE
 
 <pre><code>usage: jun-telemetry.py [-h] [-c file] [-d] [-t]
 
