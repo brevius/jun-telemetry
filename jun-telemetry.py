@@ -50,7 +50,7 @@ def get_config_options(config_file):
 def influxWrite(result):  # write to InfluxDB
     if type(result) is list:
         try:
-            if any('lsp_usage' in item['measurement'] for item in result) and not options.t:
+            if any(conf['DBMeasurements']['lsp_usage'] in item['measurement'] for item in result) and not options.t:
                 influxWriteTelegraf(result)
             else:
                 influxdb_client.write_points(result)
