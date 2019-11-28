@@ -93,7 +93,7 @@ except BaseException as err:
     print (err)
 
 influxdb_client = InfluxDBClient(conf['InfluxDB']['Influx_server'], int(conf['InfluxDB']['Influx_port']), conf['InfluxDB']['Influx_user'],  conf['InfluxDB']['Influx_pass'], conf['InfluxDB']['Influx_database'])  # InfluxDB definition
-telegraf_client = InfluxDBClient(conf['InfluxDB']['Influx_server'], int(conf['InfluxDB']['Influx_port']), conf['InfluxDB']['Influx_user'],  conf['InfluxDB']['Influx_pass'], "test")
+telegraf_client = InfluxDBClient(conf['Telegraf']['Telegraf_server'], int(conf['Telegraf']['Telegraf_port']), conf['Telegraf']['Telegraf_user'],  conf['Telegraf']['Telegraf_pass'], "test")
 
 logging.basicConfig(stream=open(conf['TelemetryServer']['LOG_FILE'], "a+"), format="%(asctime)-15s")
 LOG = logging.getLogger(__name__)
