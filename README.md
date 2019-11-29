@@ -48,6 +48,17 @@ Telegraf_pass    = root</code></pre>
     resource /junos/system/linecard/npu/utilization/;
 }</code></pre>
 
+Currently supported sensors:
+
+<pre><code>pfe          /junos/system/linecard/packet/usage/
+int_phy      /junos/system/linecard/interface/
+optic        /junos/system/linecard/optics/
+int_logic    /junos/system/linecard/interface/logical/usage/
+npu_util     /junos/system/linecard/npu/utilization/
+lsp_usage    /junos/services/label-switched-path/usage/
+fabric       /junos/system/linecard/fabric/
+npu_mem_ext  /junos/system/linecard/npu/memory/
+firewall     /junos/system/linecard/firewall/</code></pre>
 
 `[DBMeasurements]` section defines names for InfluxDB measurements saved in database.
 
