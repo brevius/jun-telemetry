@@ -58,7 +58,8 @@ npu_util     /junos/system/linecard/npu/utilization/
 lsp_usage    /junos/services/label-switched-path/usage/
 fabric       /junos/system/linecard/fabric/
 npu_mem_ext  /junos/system/linecard/npu/memory/
-firewall     /junos/system/linecard/firewall/</code></pre>
+firewall     /junos/system/linecard/firewall/
+inline-jflow /junos/system/linecard/services/inline-jflow/</code></pre>
 
 `[DBMeasurements]` section defines names for InfluxDB measurements saved in database.
 
