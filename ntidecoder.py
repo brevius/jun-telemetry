@@ -36,7 +36,8 @@ sensor_conf = {
   'fabric':      'fabric',
   'lsp_usage':   'lsp-usage',
   'npu_mem_ext': 'npu-mem-ext',
-  'firewall':    'fw'
+  'firewall':    'fw',
+  'inline-jflow':'inline-jflow'
 }
 
 measurement_conf = {
@@ -53,7 +54,13 @@ measurement_conf = {
   'lsp_usage':       'lsp.usage',
   'npu_mem_ext':     'npu_mem_ext',
   'npu_mem_ext_det': 'npu_mem_ext_det',
-  'fw_counter':      'fw_counter'
+  'fw_counter':      'fw_counter',
+  'jflow.global':    'jflow.global',
+  'jflow.inet':      'jflow.inet',
+  'jflow.inet6':     'jflow.inet6',
+  'jflow.bridge':    'jflow.bridge',
+  'jflow.mpls':      'jflow.mpls',
+  'jflow.vpls':      'jflow.vpls'  
 }
 
 pfe_packet_stats = {
@@ -125,6 +132,113 @@ packet_stats_pfe = {
 firewall_stats = {
   'packets'    :'pkts',
   'bytes'      :'bytes'
+}
+
+inline_jflow_global_stats = {
+  'autonomous_system_record_cnt':           'asreccnt', 
+#  'bridge_configured_observation_domain_id',  
+  'bridge_max_flows_count':                 'brmaxflw', 
+  'flexible_flow_sizing':                   'flxflw', 
+#  'ipv4_configured_observation_domain_id',  
+  'ipv4_max_flows_count':                   'v4maxflw',
+  'ipv4_route_record_cnt':                  'v4rtreccnt', 
+#  'ipv6_configured_observation_domain_id', 
+#  'ipv6_extended_attribute',  
+  'ipv6_max_flows_count':                   'v6maxflw', 
+  'ipv6_route_record_cnt':                  'v6rtreccnt', 
+#  'last_clear_timestamp', 
+  'memory_alloc_fail_cnt':                  'mallocfail',
+#  'mpls_configured_observation_domain_id',  
+  'mpls_max_flows_count':                  'mplsmaxflw', 
+  'mpls_route_record_cnt':                 'mplsrtreccnt', 
+  'use_extended_flow_memory':              'extmem',
+#  'vpls_configured_observation_domain_id', 
+  'vpls_max_flows_count':                  'vplsmaxflw'
+}
+
+inline_jflow_inet_stats = {
+  'ipv4_active_flows':                       'v4actflw',
+  'ipv4_autonomous_system_lookup_failure':   'v4aslf',
+  'ipv4_flow_bytes':                         'v4fbytes',
+  'ipv4_flow_create_failure':                'v4fcf',
+  'ipv4_flow_insert_count':                  'v4ficnt',
+  'ipv4_flow_packet_export_failure':         'v4fpef',
+  'ipv4_flow_packets':                       'v4fpkts',
+  'ipv4_flow_table_utilization':             'v4ftutil',
+  'ipv4_flows_active_timed_out':             'v4fato',
+  'ipv4_flows_exported':                     'v4fexport',
+  'ipv4_flows_inactive_timed_out':           'v4fito',
+  'ipv4_packets_exported':                   'v4pktsexp',
+  'ipv4_route_lookup_failure':               'v4rlf',
+  'ipv4_total_flows':                        'v4tflw'
+}
+
+inline_jflow_inet6_stats = {
+  'ipv6_active_flows':                       'v6actflw', 
+  'ipv6_autonomous_system_lookup_failure':   'v6aslf',           
+  'ipv6_flow_bytes':                         'v6fbytes',
+  'ipv6_flow_create_failure':                'v6fcf',
+  'ipv6_flow_insert_count':                  'v6ficnt',
+  'ipv6_flow_packet_export_failure':         'v6fpef',    
+  'ipv6_flow_packets':                       'v6fpkts',
+  'ipv6_flow_table_utilization':             'v6ftutil',
+  'ipv6_flows_active_timed_out':             'v6fato',
+  'ipv6_flows_exported':                     'v6fexport',
+  'ipv6_flows_inactive_timed_out':           'v6fito',
+  'ipv6_packets_exported':                   'v6pktsexp',
+  'ipv6_route_lookup_failure':               'v6rlf',
+  'ipv6_total_flows':                        'v6tflw'
+}
+
+inline_jflow_bridge_stats = {
+  'bridge_active_flows':                      'bractflw', 
+  'bridge_autonomous_system_lookup_failure': 'braslf',   
+  'bridge_flow_bytes':                       'brfbytes',
+  'bridge_flow_create_failure':              'brfcf',
+  'bridge_flow_insert_count':                'brficnt',
+  'bridge_flow_packet_export_failure':       'brfpef',   
+  'bridge_flow_packets':                     'brfpkts',
+  'bridge_flow_table_utilization':           'brftutil',
+  'bridge_flows_active_timed_out':           'brfato',
+  'bridge_flows_exported':                   'brfexport',
+  'bridge_flows_inactive_timed_out':         'brfito',
+  'bridge_packets_exported':                 'brpktsexp',
+  'bridge_route_lookup_failure':             'brrlf',
+  'bridge_total_flows':                      'brtflw'
+}
+
+inline_jflow_mpls_stats = {
+  'mpls_active_flows':                       'mplsactflw', 
+  'mpls_autonomous_system_lookup_failure':   'mplsaslf',   
+  'mpls_flow_bytes':                         'mplsfbytes',
+  'mpls_flow_create_failure':                'mplsfcf',
+  'mpls_flow_insert_count':                  'mplsficnt',
+  'mpls_flow_packet_export_failure':         'mplsfpef',   
+  'mpls_flow_packets':                       'mplsfpkts',
+  'mpls_flow_table_utilization':             'mplsftutil',
+  'mpls_flows_active_timed_out':             'mplsfato',
+  'mpls_flows_exported':                     'mplsfexport',
+  'mpls_flows_inactive_timed_out':           'mplsfito',
+  'mpls_packets_exported':                   'mplspktsexp',
+  'mpls_route_lookup_failure':               'mplsrlf',
+  'mpls_total_flows':                        'mplstflw'
+}
+
+inline_jflow_vpls_stats = {
+  'vpls_active_flows':                       'vplsactflw', 
+  'vpls_autonomous_system_lookup_failure':   'vplsaslf',   
+  'vpls_flow_bytes':                         'vplsfbytes',
+  'vpls_flow_create_failure':                'vplsfcf',
+  'vpls_flow_insert_count':                  'vplsficnt',
+  'vpls_flow_packet_export_failure':         'vplsfpef',   
+  'vpls_flow_packets':                       'vplsfpkts',
+  'vpls_flow_table_utilization':             'vplsftutil',
+  'vpls_flows_active_timed_out':             'vplsfato',
+  'vpls_flows_exported':                     'vplsfexport',
+  'vpls_flows_inactive_timed_out':           'vplsfito',
+  'vpls_packets_exported':                   'vplspktsexp',
+  'vpls_route_lookup_failure':               'vplsrlf',
+  'vpls_total_flows':                        'vplstflw'
 }
 
 def telemetry_decoder(sampledata):
@@ -254,11 +368,11 @@ def telemetry_decoder(sampledata):
             qfields['q_curbufocc'] = b.cur_buffer_occupancy
             qfields['q_pkbufocc'] = b.peak_buffer_occupancy
             qfields['q_allocbufsize'] = b.allocated_buffer_size
-    
+
             qresult['fields'] = qfields
             qresult['tags'] = qtags
             final_result.append(deepcopy(qresult))
-    
+
         final_result = []
         result = {}
         fields = {}
@@ -272,7 +386,7 @@ def telemetry_decoder(sampledata):
                 tags['lag'] = i.parent_ae_name
             for b in i.egress_queue_info:
                 queue_info_process(systemid, i.if_name, b)
-    
+
             fields['i_pkts'] = i.ingress_stats.if_pkts
             fields['i_octets'] = i.ingress_stats.if_octets
             fields['i_1sec_pkts'] = i.ingress_stats.if_1sec_pkts
@@ -282,7 +396,7 @@ def telemetry_decoder(sampledata):
             fields['i_bc_pkts'] = i.ingress_stats.if_bc_pkts
             fields['i_bc_error'] = i.ingress_stats.if_error
             fields['i_pause'] = i.ingress_stats.if_pause_pkts
-    
+
             fields['e_pkts'] = i.egress_stats.if_pkts
             fields['e_octets'] = i.egress_stats.if_octets
             fields['e_1sec_pkts'] = i.egress_stats.if_1sec_pkts
@@ -292,7 +406,7 @@ def telemetry_decoder(sampledata):
             fields['e_bc_pkts'] = i.egress_stats.if_bc_pkts
             fields['e_bc_error'] = i.egress_stats.if_error
             fields['e_pause'] = i.egress_stats.if_pause_pkts
-    
+
             fields['ie_errors'] = i.ingress_errors.if_errors
             fields['ie_qdrops'] = i.ingress_errors.if_in_qdrops
             fields['ie_frerrors'] = i.ingress_errors.if_in_frame_errors
@@ -303,13 +417,13 @@ def telemetry_decoder(sampledata):
             fields['ie_l2mis_t'] = i.ingress_errors.if_in_l2_mismatch_timeouts
             fields['ie_fifo'] = i.ingress_errors.if_in_fifo_errors
             fields['ie_res'] = i.ingress_errors.if_in_resource_errors
-    
+
             result['fields'] = fields
             result['tags'] = tags
             final_result.append(deepcopy(result))
         return final_result
-    
-    
+
+
     def int_logic_decode(systemid):  # /junos/system/linecard/interface/logical/usage/
         final_result = []
         result = {}
@@ -324,21 +438,21 @@ def telemetry_decoder(sampledata):
             fields['i_octets'] = i.ingress_stats.if_octets
             fields['i_ucast_packets'] = i.ingress_stats.if_ucast_packets
             fields['i_mcast_packets'] = i.ingress_stats.if_mcast_packets
-    
+
             fields['e_packets'] = i.egress_stats.if_packets
             fields['e_octets'] = i.egress_stats.if_octets
             fields['e_ucast_packets'] = i.egress_stats.if_ucast_packets
             fields['e_mcast_packets'] = i.egress_stats.if_mcast_packets
-    
+
             result['fields'] = fields
             result['tags'] = tags
             final_result.append(deepcopy(result))
-    
+
         return final_result
-    
-    
+
+
     def pfe_decode(systemid, componentid):  # pfe
-    
+
         def pfe_detail_decode(systemid, b, pfe_name):                 # pfe module details decode
             presult = {}
             pfields = {}
@@ -355,7 +469,7 @@ def telemetry_decoder(sampledata):
             presult['fields'] = pfields
             presult['tags'] = ptags
             final_result.append(deepcopy(presult))
-    
+
         final_result = []
         final_result[:] = []
         result = {}
@@ -366,18 +480,18 @@ def telemetry_decoder(sampledata):
         tags['elem'] = 'global'
         tags['cid'] = componentid
         for i in tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[packet_stats_pb2.jnpr_packet_statistics_ext].packet_stats:
-    
+
             try:
                 if i.counter.packet_count < 30000000000000:        # Junos bug 16.1
                     fields[pfe_packet_stats[i.name]+'_pc'] = i.counter.packet_count
             except:
                 print ('Unknown field type ', i.name)
                 pass
-    
+
         result['fields'] = fields
         result['tags'] = tags
         final_result.append(deepcopy(result))
-    
+
         pfenumber = 0
         for i in tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[packet_stats_pb2.jnpr_packet_statistics_ext].packet_stats_pfe:
             if i.pfe_identifier == "pfe-":       # pfe- without identifier! incremental workaround!!!
@@ -387,10 +501,10 @@ def telemetry_decoder(sampledata):
             for b in i.packet_stats:
                 pfe_detail_decode(systemid, b, pfe_ident)
             pfenumber += 1
-    
+
         return final_result
-    
-    
+
+
     def fabric_decode(systemid):  # /junos/system/linecard/fabric/
         final_result = []
         result = {}
@@ -410,7 +524,7 @@ def telemetry_decoder(sampledata):
                     fields["dpps"] = b.transmit_counts.drop_packets_per_second
                     fields["epkts"] = b.transmit_counts.error_packets
                     fields["epps"] = b.transmit_counts.error_packets_per_second
-    
+
                     result['measurement'] = measurement_conf['fabric.sw']
                     result['fields'] = fields
                     result['tags'] = tags
@@ -418,7 +532,7 @@ def telemetry_decoder(sampledata):
                     result = {}
                     fields = {}
                     tags = {}
-    
+
             if i.source_type == 2:  # Line_Card
                 if i.destination_type == 1:  # Switch_Fabric
                     tags['system_id'] = systemid
@@ -429,7 +543,7 @@ def telemetry_decoder(sampledata):
                         fields["bytes"] = b.transmit_counts.bytes
                         fields["pps"] = b.transmit_counts.packets_per_second
                         fields["bytsps"] = b.transmit_counts.bytes_per_second
-    
+
                         result['measurement'] = measurement_conf['fabric.lnsw']
                         result['fields'] = fields
                         result['tags'] = tags
@@ -437,7 +551,7 @@ def telemetry_decoder(sampledata):
                         result = {}
                         fields = {}
                         tags = {}
-    
+
                 if i.destination_type == 2:  # Line_Card
                     tags['system_id'] = systemid
                     tags['src_slot'] = i.source_slot
@@ -458,7 +572,7 @@ def telemetry_decoder(sampledata):
                         fields["qdc"] = b.transmit_counts.queue_depth_current
                         fields["qdp"] = b.transmit_counts.queue_depth_peak
                         fields["qdmax"] = b.transmit_counts.queue_depth_maximum
-    
+
                         result['measurement'] = measurement_conf['fabric.lncrd']
                         result['fields'] = fields
                         result['tags'] = tags
@@ -467,8 +581,8 @@ def telemetry_decoder(sampledata):
                         fields = {}
                         tags = {}
         return final_result
-    
-    
+
+
     def lsp_usage_decode(systemid, componentid):
         final_result = []
         final_result[:] = []
@@ -524,7 +638,79 @@ def telemetry_decoder(sampledata):
             print (err)
             pass
         return final_result
-            
+
+    def inline_jflow_decode(systemid):
+        final_result = []
+        final_result.clear()
+        result = {}
+        fields = {}
+        tags = {}
+        try:
+            # global sampling info
+            tags['system_id'] = systemid
+            result['measurement'] = measurement_conf['jflow.global']
+            for b in inline_jflow_global_stats.keys():
+                fields[inline_jflow_global_stats[b]] = (getattr(tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[inline_jflow_pb2.inline_jflow_stats_ext], b))
+            result['fields'] = fields
+            result['tags'] = tags
+            final_result.append(deepcopy(result))
+            fields.clear()
+            tags.clear()
+            result.clear()
+            # npu stats
+            for i in tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[inline_jflow_pb2.inline_jflow_stats_ext].npu_stats:
+                tags['system_id'] = systemid
+                tags['npuid'] = i.npu_identifier
+                # inet samples
+                if tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[inline_jflow_pb2.inline_jflow_stats_ext].ipv4_flows_export_format:
+                    result['measurement'] = measurement_conf['jflow.inet']
+                    for b in inline_jflow_inet_stats.keys():
+                        fields[inline_jflow_inet_stats[b]] = (getattr(i, b))
+                    result['fields'] = fields
+                    result['tags'] = tags
+                    final_result.append(deepcopy(result))
+                    fields.clear()
+                # inet6 samples
+                if tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[inline_jflow_pb2.inline_jflow_stats_ext].ipv6_flows_export_format:
+                    result['measurement'] = measurement_conf['jflow.inet6']
+                    for b in inline_jflow_inet6_stats.keys():
+                        fields[inline_jflow_inet6_stats[b]] = (getattr(i, b))
+                    result['fields'] = fields
+                    result['tags'] = tags
+                    final_result.append(deepcopy(result))
+                    fields.clear()
+                # bridge samples
+                if tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[inline_jflow_pb2.inline_jflow_stats_ext].bridge_flows_export_format:
+                    result['measurement'] = measurement_conf['jflow.bridge']
+                    for b in inline_jflow_bridge_stats.keys():
+                        fields[inline_jflow_bridge_stats[b]] = (getattr(i, b))
+                    result['fields'] = fields
+                    result['tags'] = tags
+                    final_result.append(deepcopy(result))
+                    fields.clear()
+                # mpls samples
+                if tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[inline_jflow_pb2.inline_jflow_stats_ext].mpls_flows_export_format:
+                    result['measurement'] = measurement_conf['jflow.mpls']
+                    for b in inline_jflow_mpls_stats.keys():
+                        fields[inline_jflow_mpls_stats[b]] = (getattr(i, b))
+                    result['fields'] = fields
+                    result['tags'] = tags
+                    final_result.append(deepcopy(result))
+                    fields.clear()
+                # vpls samples
+                if tel_info.enterprise.Extensions[telemetry_top_pb2.juniperNetworks].Extensions[inline_jflow_pb2.inline_jflow_stats_ext].vpls_flows_export_format:
+                    result['measurement'] = measurement_conf['jflow.vpls']
+                    for b in inline_jflow_vpls_stats.keys():
+                        fields[inline_jflow_vpls_stats[b]] = (getattr(i, b))
+                    result['fields'] = fields
+                    result['tags'] = tags
+                    final_result.append(deepcopy(result))
+                    fields.clear()                
+        except BaseException as err:
+            print (err)
+            pass
+        return final_result
+
     if sensorname == sensor_conf['npu_util']:
         return npu_util_decode(systemid)
 
@@ -548,6 +734,9 @@ def telemetry_decoder(sampledata):
 
     if sensorname == sensor_conf['lsp_usage']:
         return lsp_usage_decode(systemid, componentid)
-        
+
     if sensorname == sensor_conf['firewall']:
         return firewall_decode(systemid, componentid)
+
+    if sensorname == sensor_conf['inline-jflow']:
+        return inline_jflow_decode(systemid)
