@@ -1,0 +1,46 @@
+version: "3.7"
+
+services:
+  jun-telemetry:
+    image: brevius/juntelemetry
+    container_name: jun-telemetry
+    hostname: jun-telemetry
+    ports:
+      - 50000:50000
+    volumes:
+      - ./jun-telemetry.conf:/opt/jun-telemetry/jun-telemetry.conf:ro
+
+  telegraf:
+    image: telegraf
+    container_name: telegraf
+    hostname: telegraf
+    ports:
+      - 8094:8094
+    volumes:
+      - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
+
+  victoriametrics:
+    image: victoriametrics/victoria-metrics
+    container_name: victoriametrics
+    hostname: victoriametrics
+    ports:
+      - "8428:8428"
+    volumes:
+      - "./victoriametrics-data:/victoria-metrics-data"
+    environment:
+      - VM_retentionPeriod=3
+    command: -envflag.enable -envflag.prefix=VM_
+
+  vmagent:
+    image: victoriametrics/vmagent
+    container_name: vmagent
+    hostname: vmagent
+    ports:
+      - "8429:8429"
+    extra_hosts:
+      - victoriametrics:host-gateway
+    environment:
+      - VM_influxTrimTimestamp=100ms
+      - VM_remoteWrite_significantFigures=6
+      - VM_remoteWrite_url=https://victoriametric:8428/api/v1/write
+    command: -envflag.enable -envflag.prefix=VM_
