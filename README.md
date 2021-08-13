@@ -82,3 +82,12 @@ npm_mem_ext_det
 optics
 pfe
 pfe_detail</code></pre>
+
+## Docker
+Docker image available 
+
+https://hub.docker.com/r/brevius/juntelemetry
+
+<code>docker pull brevius/juntelemetry</code>
+  
+Docker-compose contains jun-telemetry, telegraf and VictoriaMetrics applications 
