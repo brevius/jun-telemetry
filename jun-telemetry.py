@@ -118,6 +118,7 @@ influxdb_client = InfluxDBClient(
     conf["InfluxDB"]["Influx_user"],
     conf["InfluxDB"]["Influx_pass"],
     conf["InfluxDB"]["Influx_database"],
+    ssl = bool(conf["InfluxDB"]["Influx_tls"]),
 )  # InfluxDB definition
 telegraf_client = InfluxDBClient(
     conf["Telegraf"]["Telegraf_server"],
@@ -125,6 +126,7 @@ telegraf_client = InfluxDBClient(
     conf["Telegraf"]["Telegraf_user"],
     conf["Telegraf"]["Telegraf_pass"],
     "test",
+    ssl = bool(conf["Telegraf"]["Telegraf_tls"]),
 )
 
 logging.basicConfig(
