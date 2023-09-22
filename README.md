@@ -5,7 +5,7 @@ Receives GPB data from Juniper routers and sends decoded counters to InfluxDB. R
 
 NOTE: Each Junos version require compiled `.proto` files (19.4 now included)
 
-NOTE: Double check MTU size on collectore server and MX interface used to reach the collector.
+NOTE: Double check MTU size on collector server and MX interface used to reach the collector.
 
 <pre><code>usage: jun-telemetry.py [-h] [-c file] [-d] [-t]
 
