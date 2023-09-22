@@ -3,6 +3,8 @@ NTI message decoder for Juniper routers
 
 Receives GPB data from Juniper routers and sends decoded counters to InfluxDB. Requires python3 and protobuf. Tested with Junos 16.1/17.3 and FreeBSD12.0-RELEASE
 
+NOTE: Each Junos version require compiled `.proto` files (19.4 now included)
+
 <pre><code>usage: jun-telemetry.py [-h] [-c file] [-d] [-t]
 
 NTI decoder
